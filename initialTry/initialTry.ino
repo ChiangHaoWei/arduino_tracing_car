@@ -1,5 +1,5 @@
 /*
-IRtest
+initialTry
 Author: ChiangHaoWei
 Date: 2020/04/09
 */
