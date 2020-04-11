@@ -15,9 +15,14 @@
 
 1. master -> successful method
 
-2. demo
-
+2. demo  
+    * motor
+    * bluetooth
+    * RFID
 3. initial_try (IT)
+    * motorwriting
+    * test
+    * IR sensor
 
 4. method_of_exhaustion (MOE)
 
