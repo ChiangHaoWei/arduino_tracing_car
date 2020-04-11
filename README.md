@@ -35,3 +35,14 @@
 7. p control with revision (pC3)
 
 8. p control with backward (pCWB)
+
+## git tutorial
+
+[git install](https://git-scm.com/)
+
+[reference 1](https://progressbar.tw/posts/1)
+
+[reference 2](https://blog.techbridge.cc/2018/01/17/learning-programming-and-coding-with-python-git-and-github-tutorial/)
+
+[reference 3](https://tw.alphacamp.co/blog/git-github-version-control-guide)
+
