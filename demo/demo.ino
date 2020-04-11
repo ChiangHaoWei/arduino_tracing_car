@@ -1,16 +1,20 @@
-/*
-Demo code
-Arthor: ChiangHaoWei
-Date: 2020/04/01
-*/
+#include <SoftwareSerial.h>
+#include <SPI.h>
 #define EN1 6
 #define EN2 3
 #define IN1 5
 #define IN2 7
 #define IN3 2
 #define IN4 4
+#define rxd 10
+#define txd 11
 
+
+SoftwareSerial BT(rxd, txd);
 void setup() {
+  Serial.begin(9600);
+  BT.begin(9600);
+  Serial.println("BT is ready!");
   for (byte i = 2; i < 8; i++){
     pinMode(i, OUTPUT);
   }
@@ -77,19 +81,37 @@ void stopMoving(){
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-  foreward();
-  delay(1000);
-  backward();
-  delay(1000);
-  turnRight();
-  delay(1000);
-  turnLeft();
-  delay(1000);
-  Right();
-  delay(1000);
-  Left();
-  delay(1000);
-  stopMoving();
-  delay(1000);
+  if (BT.available()) {
+    char BTRead = BT.read();
+    Serial.print(BTRead);
+    switch(BTRead) {
+      case '0':
+      stopMoving();
+      break;
+      case '1':
+        forward();
+        break;
+      case '2':
+        backward();
+        break;
+      case '3':
+        turnLeft();
+        break;
+      case '4':
+        turnRight();
+        break;
+      case '5':
+        Left();
+        break;
+      case '6':
+        Right();
+        break;
+       default:
+       stopMoving();
+        break;
+    }
+  }
+  if (Serial.available()) {
+    BT.write(Serial.read());
+  }
 }
