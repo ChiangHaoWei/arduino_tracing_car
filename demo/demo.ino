@@ -1,5 +1,6 @@
 #include <SoftwareSerial.h>
 #include <SPI.h>
+#include <MFRC522.h>
 #define EN1 6
 #define EN2 3
 #define IN1 5
@@ -10,6 +11,7 @@
 #define txd 11
 
 
+MFRC522 mfrc522(SS_Pin, RST_Pin);
 SoftwareSerial BT(rxd, txd);
 void setup() {
   Serial.begin(9600);
@@ -81,6 +83,19 @@ void stopMoving(){
 }
 
 void loop() {
+  if(!mfrc522.PICC_IsNewCardPresent() || !mfrc522.PICC_ReadCardSerial()){
+    goto FuncEnd;
+  }
+  byte *id = mfrc522.uid.uidByte;
+  byte idSize = mfrc522.uid.size;
+  byte goID[4] = {0, 135, 96, 201};
+  for (byte i = 0; i < idSize; i++) {
+    if (goID[i] != id[i]) {
+      Serial.println(F("Not available card"));
+      goto FuncEnd;
+    }
+  }
+  mfrc522.PICC_HaltA();
   if (BT.available()) {
     char BTRead = BT.read();
     Serial.print(BTRead);
@@ -114,4 +129,5 @@ void loop() {
   if (Serial.available()) {
     BT.write(Serial.read());
   }
+  FuncEnd:;
 }
