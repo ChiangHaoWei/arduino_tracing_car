@@ -45,8 +45,18 @@ void MotorWriting(int vR, int vL){
     digitalWrite(IN4, HIGH);
   }
 }
-void loop() {
+
+void test(){
   MotorWriting(150, 125);
   delay(3000);
+  MotorWriting(-150, 125);
+  delay(3000);
+  MotorWriting(150, -125);
+  delay(3000);
+  MotorWriting(-150, -125);
+  delay(3000);
+}
 
+void loop() {
+  test();
 }
