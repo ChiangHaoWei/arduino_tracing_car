@@ -56,6 +56,8 @@
 7. git add *file name*
 8. git commit -m '*message*'
 9. git push
+10. git checkout master
+11. git merge *branch name*
 
 [git install](https://git-scm.com/)
 
