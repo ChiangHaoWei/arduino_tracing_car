@@ -10,6 +10,7 @@ void setup() {
   for (byte i = 2; i < 8; i++) {
     pinMode(i, OUTPUT);
   }
+  Serial.begin(9600);
 }
 void MotorWriting(int vR, int vL){
   if (vR > 0 && vL > 0) {
