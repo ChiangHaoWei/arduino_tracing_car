@@ -64,12 +64,18 @@ void loop() {
   byte left_pin[3] = {A0, A1, A2};
   byte right_pin[3] = {A5, A4, A3};
   for (byte i = 0; i < 3; i++) {
-    if (analogRead(left_pin[i]) < 250) {
+    if (analogRead(left_pin[i]) > 250) {
       left += error[i];
+      Serial.print("left ");
+      Serial.print(i);
+      Serial.println(analogRead(left_pin[i]));
       break;
      }
-     if (analogRead(right_pin[i]) < 250) {
+     if (analogRead(right_pin[i]) > 250) {
       right += error[i];
+      Serial.print("Right ");
+      Serial.print(i);
+      Serial.println(analogRead(right_pin[i]));
       break;
      }
    MotorWriting(right, left);
