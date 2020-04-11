@@ -15,14 +15,16 @@
 
 1. master -> successful method
 
-2. initial_try (IT)
+2. demo
 
-3. method_of_exhaustion (MOE)
+3. initial_try (IT)
 
-4. p control version 1 (pC1)
+4. method_of_exhaustion (MOE)
 
-5. p control version 2 (pC2)
+5. p control version 1 (pC1)
 
-6. p control with revision (pC3)
+6. p control version 2 (pC2)
 
-7. p control with backward (pCWB)
+7. p control with revision (pC3)
+
+8. p control with backward (pCWB)
