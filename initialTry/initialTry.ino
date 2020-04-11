@@ -58,5 +58,20 @@ void test(){
 }
 
 void loop() {
-  test();
+  int left = 75;
+  int right = 75;
+  byte error[3] = {-80, -20, 0};
+  byte left_pin[3] = {A0, A1, A2};
+  byte right_pin[3] = {A5, A4, A3};
+  for (byte i = 0; i < 3; i++) {
+    if (analogRead(left_pin[i]) < 250) {
+      left += error[i];
+      break;
+     }
+     if (analogRead(right_pin[i]) < 250) {
+      right += error[i];
+      break;
+     }
+   MotorWriting(right, left);
+  }
 }
