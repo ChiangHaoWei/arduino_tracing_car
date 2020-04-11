@@ -15,10 +15,12 @@
 
 1. master -> steady version
 
-2. demo  
+2. demo
     * motor
     * bluetooth
     * RFID
+    >  2020/04/08 finished
+
 3. initial_try (IT)
     * motorwriting
     * test
