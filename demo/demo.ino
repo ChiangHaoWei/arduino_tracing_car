@@ -7,8 +7,10 @@
 #define IN2 7
 #define IN3 2
 #define IN4 4
-#define rxd 10
-#define txd 11
+#define rxd A0
+#define txd A1
+#define SS_Pin 9
+#define RST_Pin 10
 
 
 MFRC522 mfrc522(SS_Pin, RST_Pin);
