@@ -1,3 +1,9 @@
+/*
+IRtest
+Author: ChiangHaoWei
+Date: 2020/04/09
+*/
+
 #define EN1 6
 #define EN2 3
 #define IN1 5

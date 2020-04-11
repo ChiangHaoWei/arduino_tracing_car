@@ -1,3 +1,8 @@
+/*
+IRtest
+Author: ChiangHaoWei
+Date: 2020/04/09
+*/
 #include <SoftwareSerial.h>
 void setup() {
   // put your setup code here, to run once:
