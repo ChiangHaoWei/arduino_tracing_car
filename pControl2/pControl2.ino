@@ -1,3 +1,8 @@
+/*
+p control version 2
+Author: Chiang Hao Wei
+Date: 2020/04/10
+*/
 #define EN1 6
 #define EN2 3
 #define IN1 5
@@ -17,7 +22,7 @@ void setup() {
     pinMode(i, OUTPUT);
     pinMode(Pin[i-2], INPUT);
   }
-  Serial.begin(9600);
+  //Serial.begin(9600);
 }
 
 void loop() {
@@ -75,34 +80,34 @@ void loop() {
   MotorWriting(vL, vR);
 }
 
-void MotorWriting(int vR, int vL){
+void MotorWriting(double vL, double vR) {
   if ((vR > 0) && (vL > 0)) {
-    analogWrite(EN1, vR);
-    analogWrite(EN2, vL);
+    analogWrite(EN1, vL);
+    analogWrite(EN2, vR);
     digitalWrite(IN1, LOW);
     digitalWrite(IN2, HIGH);
     digitalWrite(IN3, HIGH);
     digitalWrite(IN4, LOW);
   }
   else if ((vR > 0) && (vL < 0)) {
-    analogWrite(EN1, vR);
-    analogWrite(EN2, -vL);
+    analogWrite(EN1, -vL);
+    analogWrite(EN2, vR);
     digitalWrite(IN1, HIGH);
     digitalWrite(IN2, LOW);
     digitalWrite(IN3, HIGH);
     digitalWrite(IN4, LOW);
   }
   else if ((vR < 0) && (vL > 0)) {
-    analogWrite(EN1, -vR);
-    analogWrite(EN2, vL);
+    analogWrite(EN1, vL);
+    analogWrite(EN2, -vR);
     digitalWrite(IN1, LOW);
     digitalWrite(IN2, HIGH);
     digitalWrite(IN3, LOW);
     digitalWrite(IN4, HIGH);
   }
-  else if ((vR < 0) && (vL < 0)) {
-    analogWrite(EN1, -vR);
-    analogWrite(EN2, -vL);
+  else {
+    analogWrite(EN1, -vL);
+    analogWrite(EN2, -vR);
     digitalWrite(IN1, HIGH);
     digitalWrite(IN2, LOW);
     digitalWrite(IN3, LOW);
