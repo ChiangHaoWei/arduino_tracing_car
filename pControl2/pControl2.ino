@@ -37,17 +37,21 @@ void loop() {
     j+=2;
   }
 
-  /*
+  
   for (int i = 0; i < 11; i++) {
     Serial.print(detected[i]);
     Serial.print(" ");
   }
-  Serial.println();*/
+  Serial.println();
   
   for (byte i = 0; i < 11; i++) {
+    if (detected[i] > 0) {
+      detected[i] = 1;
+    }
+    else {detected[i] = 0;}
     error = error + (detected[i] * weight[i]);
   }
-  /*
+  
   Serial.print("vL = ");
   Serial.println(vL);
   Serial.print("vR = ");
@@ -56,19 +60,19 @@ void loop() {
     Serial.print(detected[i]);
     Serial.print(" ");
   }
-  Serial.println();*/
+  Serial.println();
 
   vL = 76 - Kp * error ;
   vR = 57 + 0.75 * (Kp * error);
-  /*
+  
   Serial.print("error = ");
   Serial.println(error);
   Serial.print("vL = ");
   Serial.println(vL);
   Serial.print("vR = ");
   Serial.println(vR);
-  delay(3000);*/
-  MotorWriting(vL, vR);
+  delay(3000);
+  //MotorWriting(vL, vR);
 }
 
 void MotorWriting(int vR, int vL){
