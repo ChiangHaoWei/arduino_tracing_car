@@ -39,6 +39,8 @@
 
 8. p control with backward (pCWB)
 
+9. bluetooth control (BC)
+
 ## Rule
 
 1. branch 的命名請按照以下的方式
