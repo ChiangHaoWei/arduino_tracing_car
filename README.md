@@ -25,6 +25,7 @@
     * motorwriting
     * test
     * IR sensor
+    > 2020/04/10 finished
 
 4. method_of_exhaustion (MOE)
 
