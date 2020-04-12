@@ -7,7 +7,8 @@
 
 
 byte Pin[6] = {A0, A1, A2, A3, A4, A5};
-int weight[11] = {100, 80, 75, 25, 0, 0, 0, -25, -75, -80, -100};
+int weight[11] = {1, 0.8, 0.75, 0.27, 0, 0, 0, -0.27, -0.75, -0.8, -1};
+const int Kp = 75;
 
 void MotorWriting(int, int);
 
@@ -36,17 +37,17 @@ void loop() {
     j+=2;
   }
 
-  
+  /*
   for (int i = 0; i < 11; i++) {
     Serial.print(detected[i]);
     Serial.print(" ");
   }
-  Serial.println();
+  Serial.println();*/
   
   for (byte i = 0; i < 11; i++) {
     error = error + (detected[i] * weight[i]);
   }
-
+  /*
   Serial.print("vL = ");
   Serial.println(vL);
   Serial.print("vR = ");
@@ -55,18 +56,19 @@ void loop() {
     Serial.print(detected[i]);
     Serial.print(" ");
   }
-  Serial.println();
+  Serial.println();*/
 
-  vL = 76 -error ;
-  vR = 57 + 0.75 * error;
+  vL = 76 - Kp * error ;
+  vR = 57 + 0.75 * (Kp * error);
+  /*
   Serial.print("error = ");
   Serial.println(error);
   Serial.print("vL = ");
   Serial.println(vL);
   Serial.print("vR = ");
   Serial.println(vR);
-  delay(3000);
-  //MotorWriting(vL, vR);
+  delay(3000);*/
+  MotorWriting(vL, vR);
 }
 
 void MotorWriting(int vR, int vL){
