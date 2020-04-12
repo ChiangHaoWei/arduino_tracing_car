@@ -39,7 +39,7 @@
 7. p control with revision (pCR)
 
 8. p control with backward (pCWB)
-
+    * 目前可成功跑完難度就高的路線
 9. bluetooth control (BC)
 
 ## Rule
