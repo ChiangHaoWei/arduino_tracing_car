@@ -30,7 +30,8 @@
 4. method_of_exhaustion (MOE)
 
 5. p control version 1 (pC1)
-
+    * 參考上課投影片並修改參數
+    > 2020/04/10 finished
 6. p control version 2 (pC2)
     * 成功跑完圓形路線
     > 2020/04/10 finished
