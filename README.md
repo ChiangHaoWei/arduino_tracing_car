@@ -25,13 +25,15 @@
     * motorwriting
     * test
     * IR sensor
-    > 2020/04/10 finished
+    > 2020/04/09 finished
 
 4. method_of_exhaustion (MOE)
 
 5. p control version 1 (pC1)
 
 6. p control version 2 (pC2)
+    * 成功跑完圓形路線
+    > 2020/04/10 finished
 
 7. p control with revision (pCR)
 
