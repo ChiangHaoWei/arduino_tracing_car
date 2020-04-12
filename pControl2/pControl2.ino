@@ -35,9 +35,27 @@ void loop() {
     previous = detected[j];
     j+=2;
   }
+
+  
+  for (int i = 0; i < 11; i++) {
+    Serial.print(detected[i]);
+    Serial.print(" ");
+  }
+  Serial.println();
+  
   for (byte i = 0; i < 11; i++) {
     error = error + (detected[i] * weight[i]);
   }
+
+  Serial.print("vL = ");
+  Serial.println(vL);
+  Serial.print("vR = ");
+  Serial.println(vR);
+  for (int i = 0; i < 11; i++) {
+    Serial.print(detected[i]);
+    Serial.print(" ");
+  }
+  Serial.println();
 
   vL = 76 -error ;
   vR = 57 + 0.75 * error;
