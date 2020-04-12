@@ -11,15 +11,6 @@
 * 組員2：葉星宏 B08901015
 * 組員3：趙懷青 B08901029
 
-## Rule
-
-1. branch 的命名請按照以下的方式
-2. 要新增自己的branch要先在README裡面加上這個branch，並且在master裡面commit
-3. branch 裡面的檔案確定ok後才merge到master
-4. 每次commit的message不要亂打
-5. 每次開始前請先pull
-
-
 ## Branch
 
 1. master -> steady version
@@ -41,9 +32,17 @@
 
 6. p control version 2 (pC2)
 
-7. p control with revision (pC3)
+7. p control with revision (pCR)
 
 8. p control with backward (pCWB)
+
+## Rule
+
+1. branch 的命名請按照以下的方式
+2. 要新增自己的branch要先在README裡面加上這個branch，並且在master裡面commit
+3. branch 裡面的檔案確定ok後才merge到master
+4. 每次commit的message不要亂打
+5. 每次開始前請先pull
 
 ## git tutorial
 
