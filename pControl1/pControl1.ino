@@ -60,8 +60,8 @@ void tracking(){
   
   double error = 1*l3 + 0.5*l2 + 0.25*l1 - 0.75*(l3 == l2 && l3==1)- 0.5*(l1 == l2 && l1==1)- 0.25*(l1 == 1 && l2==0)
                  -(1*r3 + 0.5*r2 - 0.25*r1 - 0.75*(r3 == r2 && r3==1)-0.5*(r1 == r2 && r1==1)-0.25*(r1 == 1 && r2==0)) ;
-  double vR = 100 + 100*error;
-  double vL = 100 - 100*error;
+  double vR = 60 + 100*error;
+  double vL = 80 - 100*error;
   //Serial.println(error);
   //delay(2000);
 
