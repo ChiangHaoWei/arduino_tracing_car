@@ -16,6 +16,7 @@ void setup() {
     pinMode(i, OUTPUT);
     pinMode(Pin[i-2], INPUT);
   }
+  Serial.begin(9600);
 }
 
 void loop() {
@@ -23,7 +24,7 @@ void loop() {
   byte previous = 0;
   byte j = 0;
   int vL = 0, vR = 0;
-  int error;
+  int error = 0;
   for (byte i = 0; i < 6; i++) {
     detected[j] = digitalRead(Pin[i]);
     if (detected[j] && previous) {
@@ -40,7 +41,14 @@ void loop() {
 
   vL = 76 -error ;
   vR = 57 + 0.75 * error;
-  MotorWriting(vL, vR);
+  Serial.print("error = ");
+  Serial.println(error);
+  Serial.print("vL = ");
+  Serial.println(vL);
+  Serial.print("vR = ");
+  Serial.println(vR);
+  delay(3000);
+  //MotorWriting(vL, vR);
 }
 
 void MotorWriting(int vR, int vL){
