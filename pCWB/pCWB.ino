@@ -1,3 +1,9 @@
+/*
+p control with backward
+Author: ChiangHaoWei
+Date: 2020/04/11
+*/
+
 #define EN1 6
 #define EN2 3
 #define IN1 5
@@ -17,7 +23,7 @@ void setup() {
   }
 }
 
-void MotorWriting(int, int);
+void MotorWriting(double, double);
 
 void loop() {
   // put your main code here, to run repeatedly:
@@ -51,14 +57,14 @@ void loop() {
     if (detected[i] == 1) {
         goto Normal;
     }
-    Serial.print(detected[i]);
-    Serial.print(" ");
+    //Serial.print(detected[i]);
+    //Serial.print(" ");
   }
   
   //error = integral;
   MotorWriting(-80, -60);
   //MotorWriting(0, 0);
-  Serial.println();
+  //Serial.println();
   goto FuncEnd;
   Normal:;
   
@@ -69,34 +75,34 @@ void loop() {
   FuncEnd:;
 }
 
-void MotorWriting(int vR, int vL){
+void MotorWriting(double vL, double vR) {
   if ((vR > 0) && (vL > 0)) {
-    analogWrite(EN1, vR);
-    analogWrite(EN2, vL);
+    analogWrite(EN1, vL);
+    analogWrite(EN2, vR);
     digitalWrite(IN1, LOW);
     digitalWrite(IN2, HIGH);
     digitalWrite(IN3, HIGH);
     digitalWrite(IN4, LOW);
   }
   else if ((vR > 0) && (vL < 0)) {
-    analogWrite(EN1, vR);
-    analogWrite(EN2, -vL);
+    analogWrite(EN1, -vL);
+    analogWrite(EN2, vR);
     digitalWrite(IN1, HIGH);
     digitalWrite(IN2, LOW);
     digitalWrite(IN3, HIGH);
     digitalWrite(IN4, LOW);
   }
   else if ((vR < 0) && (vL > 0)) {
-    analogWrite(EN1, -vR);
-    analogWrite(EN2, vL);
+    analogWrite(EN1, vL);
+    analogWrite(EN2, -vR);
     digitalWrite(IN1, LOW);
     digitalWrite(IN2, HIGH);
     digitalWrite(IN3, LOW);
     digitalWrite(IN4, HIGH);
   }
-  else if ((vR < 0) && (vL < 0)) {
-    analogWrite(EN1, -vR);
-    analogWrite(EN2, -vL);
+  else {
+    analogWrite(EN1, -vL);
+    analogWrite(EN2, -vR);
     digitalWrite(IN1, HIGH);
     digitalWrite(IN2, LOW);
     digitalWrite(IN3, LOW);
