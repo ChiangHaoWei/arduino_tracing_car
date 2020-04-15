@@ -28,7 +28,8 @@
     > 2020/04/09 finished
 
 4. method_of_exhaustion (MOE)
-
+    * [程式碼連結](https://drive.google.com/file/d/1oFbfJ1kmALKRzraeVOOc1-p5hVnQEiO7/view?usp=sharing)
+    > 2020/04/10 finished
 5. p control version 1 (pC1)
     * 參考上課投影片並修改參數
     > 2020/04/10 finished
