@@ -37,7 +37,7 @@
     * 成功跑完圓形路線
     > 2020/04/10 finished
 
-7. p control with revision (pCR)
+7. p control version 3 (pC3)
 
 8. p control with backward (pCWB)
     * 目前可成功跑完難度就高的路線
